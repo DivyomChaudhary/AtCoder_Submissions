@@ -1,11 +1,9 @@
 import math
 n, m = map(int, input().split())
-max_grapes = math.ceil(m/n)
-rem = m
+least_grapes = m // n
+extra_grapes = m % n
 for i in range(n):
-    if max_grapes < rem:
-        print(max_grapes)
-        rem-= max_grapes
+    if i < extra_grapes:
+        print(least_grapes + 1)
     else:
-        print(rem)
-        rem = 0
+        print(least_grapes)
